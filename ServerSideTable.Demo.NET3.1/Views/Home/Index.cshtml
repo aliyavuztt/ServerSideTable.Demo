@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="mb-5 mt-5">
+    <h2>Person Lists</h2>
+    <hr />
+    <table id="myTable" class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts
+{
+    <script>
+        $(document).ready(function () {
+            var table = $('#myTable').dataTable({
+
+                lengthMenu: [[10, 25, 50, 100], [10, 25, 50, 100]],
+                pageLength: 10,
+                processing: true,
+                serverSide: true,
+                filter: true,
+                ordering: true,
+                ajax: {
+                    url: "/Home/GetPersons",
+                    type: "POST",
+                    datatype: "json"
+                },
+                columns: [
+                    { data: "id", name: "id" },
+                    { data: "firstName", name: "firstName" },
+                    { data: "lastName", name: "lastName" },
+                    { data: "phone", name: "phone" },
+                    { data: "mail", name: "mail" },
+                    { data: "address", name: "address" },
+                    { data: "age", name: "age" }
+                ]
+            });
+        });
+    </script>
+}
