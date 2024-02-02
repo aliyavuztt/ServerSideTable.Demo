@@ -8,13 +8,8 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.4.0" />
+    <PackageReference Include="DataTableServerSide.AspNetCore" Version="1.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.26" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DataTableServerSide.AspNetCore">
-      <HintPath>..\..\DataTableServerSide.AspNetCore\bin\Debug\netstandard2.1\DataTableServerSide.AspNetCore.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>
